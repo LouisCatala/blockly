@@ -167,6 +167,8 @@ Blockly.Python['math_number_property'] = function(block) {
     Blockly.Python.definitions_['import_math'] = 'import math';
     Blockly.Python.definitions_['from_numbers_import_Number'] =
         'from numbers import Number';
+        number_to_check = Blockly.Python.valueToCode(block, 'NUMBER_TO_CHECK',
+        Blockly.Python.ORDER_NONE) || '0';
     var functionName = Blockly.Python.provideFunction_(
         'math_isPrime',
         ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(n):',
@@ -202,9 +204,13 @@ Blockly.Python['math_number_property'] = function(block) {
       code = number_to_check + ' % 1 == 0';
       break;
     case 'POSITIVE':
+      number_to_check = Blockly.Python.valueToCode(block, 'NUMBER_TO_CHECK',
+      Blockly.Python.ORDER_RELATIONAL) || '0';
       code = number_to_check + ' > 0';
       break;
     case 'NEGATIVE':
+      number_to_check = Blockly.Python.valueToCode(block, 'NUMBER_TO_CHECK',
+      Blockly.Python.ORDER_RELATIONAL) || '0';
       code = number_to_check + ' < 0';
       break;
     case 'DIVISIBLE_BY':
@@ -260,7 +266,7 @@ Blockly.Python['math_on_list'] = function(block) {
           'math_mean',
           // This operation excludes null and values that aren't int or float:',
           // math_mean([null, null, "aString", 1, 9]) == 5.0.',
-          ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(myList):',
+          ['def ' + Blockly.Python.FUNCTImath_number_propertyON_NAME_PLACEHOLDER_ + '(myList):',
            '  localList = [e for e in myList if isinstance(e, Number)]',
            '  if not localList: return',
            '  return float(sum(localList)) / len(localList)']);
