@@ -173,7 +173,7 @@ Blockly.Python['math_number_property'] = function(block) {
         Blockly.Python.ORDER_RELATIONAL],
     'PRIME': [null, Blockly.Python.ORDER_NONE,
         Blockly.Python.ORDER_FUNCTION_CALL]
-  }
+  };
   const dropdownProperty = block.getFieldValue('PROPERTY');
   const tuple = PROPERTIES[dropdownProperty];
   const suffix = tuple[0];
@@ -208,7 +208,7 @@ Blockly.Python['math_number_property'] = function(block) {
        '    if n % (x - 1) == 0 or n % (x + 1) == 0:',
        '      return False',
        '  return True']);
-       code = functionName + '(' + numberToCheck + ')';
+    code = functionName + '(' + numberToCheck + ')';
   } else if (dropdownProperty === 'DIVISIBLE_BY') {
     const divisor = Blockly.Python.valueToCode(block, 'DIVISOR',
         Blockly.Python.ORDER_MULTIPLICATIVE) || '0';
