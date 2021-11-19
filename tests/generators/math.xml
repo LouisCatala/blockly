@@ -999,7 +999,7 @@
                     <field name="EXPECTED">TRUE</field>
                     <value name="MESSAGE">
                       <block type="text" id="Q#XQ}Xig0EhCgag2D0oX">
-                        <field name="TEXT">prime 5</field>
+                        <field name="TEXT">prime 5 + 2</field>
                       </block>
                     </value>
                     <value name="ACTUAL">
